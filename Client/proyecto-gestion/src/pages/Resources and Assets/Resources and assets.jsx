@@ -1,4 +1,4 @@
-import React from "react";
+
 import Objeto from '../IMG/OBJECTS.png'
 import Assets from '../IMG/activo.png'
 import Resources from '../IMG/recurso.png'
