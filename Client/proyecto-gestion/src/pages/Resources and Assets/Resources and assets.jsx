@@ -1,7 +1,7 @@
 
-import Objeto from '../IMG/OBJECTS.png'
-import Assets from '../IMG/activo.png'
-import Resources from '../IMG/recurso.png'
+import Objeto from '../../IMG/OBJECTS.png'
+import Assets from '../../IMG/activo.png'
+import Resources from '../../IMG/recurso.png'
 
 function ResourcesAndAssets(){
     return(
