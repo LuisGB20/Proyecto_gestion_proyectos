@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Header from '../../components/header'
 import SidebarAdmin from '../../components/SidebarAdmin'
 import TarjetasEquipo from './components/TarjetasEquipo'
@@ -23,7 +23,7 @@ function TodosEquipos() {
                         <TarjetasEquipo />
                         <TarjetasEquipo />
                         <TarjetasEquipo />
-                        <TarjetasEquipo />
+                        <button className=' font-medium text-center text-lg italic bg-gradient-to-r from-[#1E4C6A]  to-[#1B7FC5] p-2 ml-40 my-5 rounded-lg text-white'>Siguiente</button> 
                     </div>
                 </div>
             </div>

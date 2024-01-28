@@ -1,9 +1,10 @@
-import React from "react"
+
 import Logo from '../IMG/logo.png';
 import imagenPerfil from '../IMG/imagenPerfil.png';
 
 function Header(props) {
   const { area } = props
+
 
   return (
     <div className="bg-white w-full h-20 flex flex-row justify-between border-2">

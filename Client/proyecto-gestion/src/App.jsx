@@ -7,6 +7,9 @@ import SolicitudActivos from "./pages/SolicitudActivos/SolicitudActivos";
 import SolicitudRecursos from "./pages/SolicitudRecursos/SolicitudRecursos";
 import TableroMiembros from "./pages/TableroMiembros/TableroMiembros";
 import TodosEquipos from "./pages/equipos/TodosEquipos";
+import Miembro from "./pages/Miembros/Miembro";
+import TodosProyectos from "./pages/Proyectos/TodosProyectos";
+
 
 function App() {
   return (
@@ -21,6 +24,8 @@ function App() {
           <Route path='/SolicitudRecursos' element={<SolicitudRecursos />} />
           <Route path='/TableroMiembros' element={<TableroMiembros />} />
           <Route path='/TodosEquipos' element={<TodosEquipos />} />
+          <Route path='/Miembro' element={<Miembro />} />
+          <Route path='/TodosProyectos' element={<TodosProyectos />} />
         </Routes>
       </BrowserRouter>
     </>

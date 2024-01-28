@@ -1,14 +1,15 @@
 
-import imagenEquipo from '../../../IMG/imageEquipo.png'
+import instagram from '../../../IMG/instagram.png'
 import eliminar from '../../../IMG/eliminar.png'
 import editar from '../../../IMG/editar.png'
 
-function TarjetasEquipo() {
+    function TarjetasProyecto() {
     return (
-        <div className='bg-white'>
-            <img src={imagenEquipo} className='rounded-xl w-96 my-3 mx-auto' />
+        <>
+                    <div className='bg-white'>
+            <img src={instagram} className='rounded-xl w-96 my-3 mx-auto' />
             <div className='my-3 mx-3'>
-                <h1 className='text-left text-2xl font-semibold my-3 italic'>Nombre del Equipo</h1>
+                <h1 className='text-left text-2xl font-semibold my-3 italic'>Nombre del Proyecto</h1>
                 <p className='text-left text-lg font-normal'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, dolorem eveniet maxime nostrum a assumenda laborum vel harum nesciunt quidem, ea architecto ipsum. Labore quo rerum nam nihil assumenda ab.</p>
             </div>
             <div>
@@ -20,7 +21,8 @@ function TarjetasEquipo() {
                 </button>
             </div>
         </div>
+        </>
     )
-}
+    }
 
-export default TarjetasEquipo
+    export default TarjetasProyecto

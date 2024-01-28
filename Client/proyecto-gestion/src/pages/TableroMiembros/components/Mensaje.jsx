@@ -1,4 +1,4 @@
-import React from 'react'
+
 import rectangulo from '../../../IMG/Rectangle413481.png'
 
 function Mensaje() {
