@@ -7,6 +7,11 @@ import SolicitudActivos from "./pages/SolicitudActivos/SolicitudActivos";
 import SolicitudRecursos from "./pages/SolicitudRecursos/SolicitudRecursos";
 import TableroMiembros from "./pages/TableroMiembros/TableroMiembros";
 import TodosEquipos from "./pages/equipos/TodosEquipos";
+import Profile from "./pages/Profile/Profile"
+import NuevoProyecto from "./pages/NuevoProyecto/NuevoProyecto";
+import NuevoEquipo from "./pages/NuevoEquipo/NuevoEquipo";
+import Proyecto from "./pages/Proyecto/Proyecto"
+import Equipo from "./pages/Equipo/Equipo";
 
 function App() {
   return (
@@ -21,6 +26,11 @@ function App() {
           <Route path='/SolicitudRecursos' element={<SolicitudRecursos />} />
           <Route path='/TableroMiembros' element={<TableroMiembros />} />
           <Route path='/TodosEquipos' element={<TodosEquipos />} />
+          <Route path='/Profile' element={<Profile />} />
+          <Route path='/NuevoProyecto' element={<NuevoProyecto />} />
+          <Route path='/NuevoEquipo' element={<NuevoEquipo />} />
+          <Route path='/Proyecto' element={<Proyecto />} />
+          <Route path='/Equipo' element={<Equipo/>}/>
         </Routes>
       </BrowserRouter>
     </>

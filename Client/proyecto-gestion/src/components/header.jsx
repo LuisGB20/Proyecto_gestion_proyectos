@@ -6,7 +6,7 @@ function Header(props) {
   const { area } = props
 
   return (
-    <div className="bg-white w-full h-20 flex flex-row justify-between border-2">
+    <div className="bg-white w-full h-25 flex flex-row justify-between border-2">
       <div className=" my-3 flex mx-10">
         <img src={Logo} className="w-16 h-16 mx-3" />
         <h1 className=" font-semibold italic text-center m-auto text-xl text-[#00568D]">PMS</h1>
