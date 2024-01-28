@@ -12,6 +12,7 @@ import TodosProyectos from "./pages/Proyectos/TodosProyectos";
 import UsuarioMiembro from "./pages/UsuarioMiembro/UsuarioMiembro";
 import NotFound from "./pages/NotFound/NotFound";
 import Politicas from "./pages/Politicas/Politicas";
+import PerfilMiembro from "./pages/perfilMiembro/PerfilMiembro";
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route path='/UsuarioMiembro' element={<UsuarioMiembro />} />
           <Route path='/*' element={<NotFound />} />
           <Route path='/Politicas' element={<Politicas />} />
+          <Route path='/PerfilMiembro' element={<PerfilMiembro />} />
         </Routes>
       </BrowserRouter>
     </>
