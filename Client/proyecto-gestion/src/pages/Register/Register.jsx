@@ -1,5 +1,5 @@
 
-import Logo from '../IMG/logo.png'
+import Logo from '../../IMG/logo.png'
 import { Link } from "react-router-dom";
 
 function Register() {

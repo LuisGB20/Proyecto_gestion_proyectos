@@ -1,9 +1,9 @@
 
 import { Link } from 'react-router-dom'
-import Logo from '../IMG/logo.png'
-import Sesion from '../IMG/sesion.png'
-import Miembro from '../IMG/miembro.png'
-import Diseño from '../IMG/diseño.png'
+import Logo from '../../IMG/logo.png'
+import Sesion from '../../IMG/sesion.png'
+import Miembro from '../../IMG/miembro.png'
+import Diseño from '../../IMG/diseño.png'
 
 function Home() {
   return (
