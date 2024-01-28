@@ -9,6 +9,7 @@ import TableroMiembros from "./pages/TableroMiembros/TableroMiembros";
 import TodosEquipos from "./pages/equipos/TodosEquipos";
 import Miembro from "./pages/Miembros/Miembro";
 import TodosProyectos from "./pages/Proyectos/TodosProyectos";
+import UsuarioMiembro from "./pages/UsuarioMiembro/UsuarioMiembro";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path='/TodosEquipos' element={<TodosEquipos />} />
           <Route path='/Miembro' element={<Miembro />} />
           <Route path='/TodosProyectos' element={<TodosProyectos />} />
+          <Route path='/UsuarioMiembro' element={<UsuarioMiembro />} />
         </Routes>
       </BrowserRouter>
     </>
