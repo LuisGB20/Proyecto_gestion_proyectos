@@ -5,7 +5,6 @@ import imagenPerfil from '../IMG/imagenPerfil.png';
 function Header(props) {
   const { area } = props
 
-
   return (
     <div className="bg-white w-full h-20 flex flex-row justify-between border-2">
       <div className=" my-3 flex mx-10">

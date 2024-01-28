@@ -13,7 +13,8 @@ import UsuarioMiembro from "./pages/UsuarioMiembro/UsuarioMiembro";
 import NotFound from "./pages/NotFound/NotFound";
 import Politicas from "./pages/Politicas/Politicas";
 import PerfilMiembro from "./pages/perfilMiembro/PerfilMiembro";
-
+import Dashboard from "./pages/Dash/Dashboard";
+import DashboardEquipos from "./pages/DashEquipos/DashboardEquipos";
 
 function App() {
   return (
@@ -34,6 +35,8 @@ function App() {
           <Route path='/*' element={<NotFound />} />
           <Route path='/Politicas' element={<Politicas />} />
           <Route path='/PerfilMiembro' element={<PerfilMiembro />} />
+          <Route path='/Dashboard' element={<Dashboard/>} />
+          <Route path='/DashboardEquipos' element={<DashboardEquipos/>} />
         </Routes>
       </BrowserRouter>
     </>
