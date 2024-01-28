@@ -1,6 +1,6 @@
 
 import Header from '../../components/header'
-import SidebarAdmin from '../../components/SidebarAdmin'
+import SidebarMiDashboard from '../../components/SidebarMiDashboard'
 import UsuarioMensaje from './components/UsuarioMensaje'
 
     function UsuarioMiembro() {
@@ -9,7 +9,7 @@ import UsuarioMensaje from './components/UsuarioMensaje'
                 <div className='w-full h-full bg-slate-200'>
             <Header />
             <div className='w-full h-full flex'>
-                <SidebarAdmin />
+                <SidebarMiDashboard />
                 <div className='w-full h-full'>
                     <div className='bg-white my-3 w-full h-20'>
                         <h1 className='text-2xl font-semibold italic p-5'>Miembros</h1>
