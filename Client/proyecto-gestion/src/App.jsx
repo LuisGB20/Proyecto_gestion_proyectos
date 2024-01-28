@@ -10,6 +10,8 @@ import TodosEquipos from "./pages/equipos/TodosEquipos";
 import Miembro from "./pages/Miembros/Miembro";
 import TodosProyectos from "./pages/Proyectos/TodosProyectos";
 import UsuarioMiembro from "./pages/UsuarioMiembro/UsuarioMiembro";
+import NotFound from "./pages/NotFound/NotFound";
+import Politicas from "./pages/Politicas/Politicas";
 
 
 function App() {
@@ -28,6 +30,8 @@ function App() {
           <Route path='/Miembro' element={<Miembro />} />
           <Route path='/TodosProyectos' element={<TodosProyectos />} />
           <Route path='/UsuarioMiembro' element={<UsuarioMiembro />} />
+          <Route path='/*' element={<NotFound />} />
+          <Route path='/Politicas' element={<Politicas />} />
         </Routes>
       </BrowserRouter>
     </>
