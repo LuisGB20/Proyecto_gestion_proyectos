@@ -1,5 +1,5 @@
-import React from "react";
-import Logo from '../IMG/logo.png'
+
+import Logo from '../../IMG/logo.png'
 import { Link } from "react-router-dom";
 
 function Login () {
@@ -32,16 +32,16 @@ function Login () {
                                 placeholder="********"
                                 className="bg-slate-100 w-80 h-10 rounded-xl pl-5"
                             />
-                            <h4 className="text-[#00568D] font-medium text-right mb-5">Olvido Su Contraseña?</h4>
                         </form>
                         <div>
-                            <button className="bg-gradient-to-r from-blue-900 to-blue-500 text-white w-80 h-10 rounded-xl">Iniciar Sesion</button>
-                            <p className="text-[#4D4D4D] text-sm text-center">O continuar con</p>
+                            <button className="bg-gradient-to-r from-blue-900 to-blue-500 text-white w-80 h-10 rounded-xl my-3">Iniciar Sesion</button>
+                            {/* <p className="text-[#4D4D4D] text-sm text-center">O continuar con</p> */}
                             <p className="text-center">Nuevo Miembro? 
                                 <Link to='/Register'>
                                     <span className="text-blue-400 ml-2">Registrate ahora</span>
                                 </Link>
                             </p>
+                            <h4 className="text-[#00568D] font-medium text-center mt-4">Olvido Su Contraseña?</h4>
                         </div>
                     </div>
                 </div>

@@ -28,7 +28,4 @@ build/
 *.sqlite
 *.sqlite3
 *.pdf
-*.jpg
-*.gif
-*.jpeg
 Thumbs.db

@@ -1,5 +1,5 @@
-import React from "react";
-import Logo from '../IMG/logo.png'
+
+import Logo from '../../IMG/logo.png'
 import { Link } from "react-router-dom";
 
 function Register() {
@@ -8,7 +8,7 @@ function Register() {
             <div className="bg-slate-200 flex items-center justify-center h-screen">
                 <div className="bg-white h-[75%] w-[35%] rounded-xl grid place-content-center shadow-xl">
                     <div className="flex justify-center">
-                        <img src={Logo} alt="" className="w-10"/>
+                        <img src={Logo} alt="" className="w-10" />
                         <p className="text-[#00568D] text-xl">ProManSys</p>
                     </div>
                     <div className="text-center mt-5 mb-5">
@@ -66,12 +66,15 @@ function Register() {
                                 </div>
                             </div>
                         </form>
-                        <div>
-                            <button className="bg-gradient-to-r from-blue-900 to-blue-500 text-white w-80 h-10 rounded-xl">Crear Cuenta</button>
-                            <p className="text-center mt-3">¿Ya tienes cuenta? 
+                        <div className='w-full flex flex-col justify-center align-middle'>
+                            <button className="bg-gradient-to-r from-blue-900 to-blue-500 text-white w-80 h-10 rounded-xl mx-auto">Crear Cuenta</button>
+                            <p className="text-center mt-3">¿Ya tienes cuenta?
                                 <Link to='/Login'>
                                     <span className="text-blue-400 ml-2">Iniciar Sesion</span>
                                 </Link>
+                            </p>
+                            <p className=' text-center mt-3'>Al registrarse aceptas nuestras condiciones de uso y
+                                <Link to={"/Politicas"} className='text-blue-400'> politica de privacidad.</Link>
                             </p>
                         </div>
                     </div>
