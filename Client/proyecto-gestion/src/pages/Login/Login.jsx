@@ -1,4 +1,3 @@
-
 import Logo from '../../IMG/logo.png'
 import { Link } from "react-router-dom";
 
@@ -41,7 +40,9 @@ function Login () {
                                     <span className="text-blue-400 ml-2">Registrate ahora</span>
                                 </Link>
                             </p>
-                            <h4 className="text-[#00568D] font-medium text-center mt-4">Olvido Su Contraseña?</h4>
+                            <Link to="/RecuperarContraseña">
+                                <h4 className="text-[#00568D] font-medium text-center mt-4">Olvido Su Contraseña?</h4>
+                            </Link>
                         </div>
                     </div>
                 </div>
