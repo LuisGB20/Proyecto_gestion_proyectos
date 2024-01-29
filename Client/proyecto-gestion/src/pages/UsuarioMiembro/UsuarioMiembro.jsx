@@ -25,7 +25,6 @@ import UsuarioMensaje from './components/UsuarioMensaje'
                             </div>
                             
                     </div>
-                    <button className=' font-medium text-center text-lg italic bg-gradient-to-r from-[#1E4C6A]  to-[#1B7FC5] w-96 p-2 ml-44 my-5 rounded-lg text-white'>Siguiente</button> 
                 </div>
             </div>
         </div>
