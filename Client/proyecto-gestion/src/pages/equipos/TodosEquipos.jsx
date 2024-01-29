@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Header from '../../components/header'
 import SidebarAdmin from '../../components/SidebarAdmin'
 import TarjetasEquipo from './components/TarjetasEquipo'
@@ -17,7 +17,6 @@ function TodosEquipos() {
                         </div>
                     </div>
                     <div className='grid grid-cols-3 gap-4 mx-5 overflow-auto h-[623px]'>
-                        <TarjetasEquipo />
                         <TarjetasEquipo />
                         <TarjetasEquipo />
                         <TarjetasEquipo />

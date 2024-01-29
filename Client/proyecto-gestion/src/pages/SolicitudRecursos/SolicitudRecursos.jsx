@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Header from '../../components/header'
 import SidebarRecursos from '../../components/SidebarRecursos'
 import TarjetasDisponibilidad from './components/TarjetasDisponibilidad'

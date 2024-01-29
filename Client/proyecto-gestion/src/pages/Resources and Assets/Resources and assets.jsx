@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom'
 import Objeto from '../../IMG/OBJECTS.png'
 import Assets from '../../IMG/activo.png'
 import Resources from '../../IMG/recurso.png'
@@ -14,20 +14,24 @@ function ResourcesAndAssets(){
                         <h1 className="font-bold text-xl mb-5">Solicitud De Recursos Y/O Activos</h1>
                     </div>
                     <div className="flex">
-                        <button className="flex justify-center items-center flex-col border-2 h-32 w-72 rounded-2xl hover:border-blue-400">  
-                            <div className="flex">
-                                <img src={Assets} alt="" className="h-6"/>
-                                <h3 className="ml-2 text-xl">Activos</h3>
-                            </div>
-                            <p>Solicita activos y evalualos</p>
-                        </button>
-                        <button className="flex justify-center items-center flex-col border-2 h-32 w-72 ml-10 rounded-2xl hover:border-blue-400">
-                            <div className="flex">
-                                <img src={Resources} alt="" className="h-6"/>
-                                <h3 className="ml-3 text-xl">Recursos</h3>
-                            </div>
-                            <p>Solicita recursos y evalualos</p>
-                        </button>
+                        <Link to="/SolicitudActivos">
+                            <button className="flex justify-center items-center flex-col border-2 h-32 w-72 rounded-2xl hover:border-blue-400">  
+                                <div className="flex">
+                                    <img src={Assets} alt="" className="h-6"/>
+                                    <h3 className="ml-2 text-xl">Activos</h3>
+                                </div>
+                                <p>Solicita activos y evalualos</p>
+                            </button>
+                        </Link>
+                        <Link to="/SolicitudRecursos">
+                            <button className="flex justify-center items-center flex-col border-2 h-32 w-72 ml-10 rounded-2xl hover:border-blue-400">
+                                <div className="flex">
+                                    <img src={Resources} alt="" className="h-6"/>
+                                    <h3 className="ml-3 text-xl">Recursos</h3>
+                                </div>
+                                <p>Solicita recursos y evalualos</p>
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-import React from "react"
+
 import Logo from '../IMG/logo.png';
 import imagenPerfil from '../IMG/imagenPerfil.png';
 
