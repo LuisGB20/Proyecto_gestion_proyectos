@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { jwtDecode } from 'jwt-decode';
 import Home from '../src/pages/Home/Home'
 import Login from "./pages/Login/Login";
 import Register from './pages/Register/Register';
@@ -21,38 +22,83 @@ import PerfilMiembro from "./pages/perfilMiembro/PerfilMiembro";
 import Dashboard from "./pages/Dash/Dashboard";
 import DashboardEquipos from "./pages/DashEquipos/DashboardEquipos";
 import Recuperar from './pages/RecuperarContraseña/Recuperar'
+import ProtectedRoutes from './Routes/ProtectedRoutes.jsx'
+import ProtectedRoutesJefe from "./Routes/ProtectedRoutesJefe.jsx";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [isRoleValid, setRoleValid] = useState(false);
+  const [isJefe, setIsJefe] = useState(false);
+  const [rol, setRol] = useState('');
+  const [tokenDecoded, setTokenDecoded] = useState(false);
+
+  useEffect(() => {
+    const token = sessionStorage.getItem('token');
+
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      console.log(decodedToken);
+      console.log(decodedToken.roles);
+
+      if (decodedToken.roles === 'Programador' || decodedToken.roles === 'Analista' || decodedToken.roles === 'Diseñador') {
+        setRoleValid(true);
+        setRol(decodedToken.roles);
+      }
+      if (decodedToken.roles === 'Jefe') {
+        setIsJefe(true);
+        setRol(decodedToken.roles);
+      }
+
+      setTokenDecoded(true);
+    } else {
+      console.log("No hay token");
+    }
+  }, []);
+
+  console.log("isRoleValid:", isRoleValid);
+  console.log("isJefe:", isJefe);
+  console.log("tokenDecoded:", tokenDecoded);
+
+
   return (
     <>
       <BrowserRouter>
         <Routes>
+          {/* General */}
+          <Route path='/Profile' element={<Profile />} />
+          <Route path='/Politicas' element={<Politicas />} />
+          <Route path='/*' element={<NotFound />} />
+          <Route path='/RecuperarContraseña' element={<Recuperar />} />
           <Route path='/' element={<Home />} />
           <Route path='/Login' element={<Login />} />
           <Route path='/Register' element={<Register />} />
-          <Route path='/ResourcesAndAssets' element={<ResourcesAndAssets />} />
-          <Route path='/SolicitudActivos' element={<SolicitudActivos />} />
-          <Route path='/SolicitudRecursos' element={<SolicitudRecursos />} />
-          <Route path='/TableroMiembros' element={<TableroMiembros />} />
-          <Route path='/TodosEquipos' element={<TodosEquipos />} />
-          <Route path='/Profile' element={<Profile />} />
-          <Route path='/NuevoProyecto' element={<NuevoProyecto />} />
-          <Route path='/NuevoEquipo' element={<NuevoEquipo />} />
-          <Route path='/Proyecto' element={<Proyecto />} />
-          <Route path='/Equipo' element={<Equipo/>}/>
-          <Route path='/Miembro' element={<Miembro />} />
-          <Route path='/TodosProyectos' element={<TodosProyectos />} />
-          <Route path='/UsuarioMiembro' element={<UsuarioMiembro />} />
-          <Route path='/*' element={<NotFound />} />
-          <Route path='/Politicas' element={<Politicas />} />
-          <Route path='/PerfilMiembro' element={<PerfilMiembro />} />
-          <Route path='/Dashboard' element={<Dashboard/>} />
-          <Route path='/DashboardEquipos' element={<DashboardEquipos/>} />
-          <Route path='/RecuperarContraseña' element={<Recuperar/>}/>
+
+          {/* Miembros */}
+          <Route element={<ProtectedRoutes canActivate={rol} redirectPath='/' />}>
+            <Route path='/ResourcesAndAssets' element={<ResourcesAndAssets />} />
+            <Route path='/SolicitudActivos' element={<SolicitudActivos />} />
+            <Route path='/SolicitudRecursos' element={<SolicitudRecursos />} />
+            <Route path='/TableroMiembros' element={<TableroMiembros />} />
+            <Route path='/Dashboard' element={<Dashboard />} />
+            <Route path='/DashboardEquipos' element={<DashboardEquipos />} />
+          </Route>
+
+          {/* Jefe */}
+          <Route element={<ProtectedRoutesJefe canActivate={rol} redirectPath='/Login' />}>
+            <Route path='/TodosEquipos' element={<TodosEquipos />} />
+            <Route path='/NuevoProyecto' element={<NuevoProyecto />} />
+            <Route path='/NuevoEquipo' element={<NuevoEquipo />} />
+            <Route path='/PerfilMiembro' element={<PerfilMiembro />} />
+            <Route path='/Proyecto' element={<Proyecto />} />
+            <Route path='/Equipo' element={<Equipo />} />
+            <Route path='/Miembro' element={<Miembro />} />
+            <Route path='/TodosProyectos' element={<TodosProyectos />} />
+            <Route path='/UsuarioMiembro' element={<UsuarioMiembro />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>
   )
 }
 
-export default App
+export default App;

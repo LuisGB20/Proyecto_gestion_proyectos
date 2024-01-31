@@ -1,9 +1,12 @@
-
+import { Link } from 'react-router-dom';
 import Logo from '../IMG/logo.png';
 import imagenPerfil from '../IMG/imagenPerfil.png';
 
 function Header(props) {
   const { area } = props
+  const nombre = sessionStorage.getItem('nombre')
+  const apellido = sessionStorage.getItem('apellido')
+  const id = sessionStorage.getItem('id')
 
   return (
     <div className="bg-white w-full h-25 flex flex-row justify-between border-2">
@@ -12,13 +15,15 @@ function Header(props) {
         <h1 className=" font-semibold italic text-center m-auto text-xl text-[#00568D]">PMS</h1>
       </div>
       <h1 className="text-lg font-semibold italic my-auto">{area}</h1>
-      <div className="flex flex-row my-auto">
-        <img src={imagenPerfil} className="mr-5 my-2" />
-        <div className="my-auto mr-10">
-          <h1 className=" text-lg font-semibold italic">Luis Gomez</h1>
-          <h1 className="text-lg font-semibold italic text-[#999999]">TID: 0000</h1>
+      <Link className='flex flex-row my-auto' to='/Profile'>
+        <div className="flex flex-row my-auto">
+          <img src={imagenPerfil} className="mr-5 my-2" />
+          <div className="my-auto mr-10">
+            <h1 className=" text-lg font-semibold italic">{nombre + " " + apellido}</h1>
+            <h1 className="text-lg font-semibold italic text-[#999999]">ID: {id}</h1>
+          </div>
         </div>
-      </div>
+      </Link>
     </div>
   )
 }
