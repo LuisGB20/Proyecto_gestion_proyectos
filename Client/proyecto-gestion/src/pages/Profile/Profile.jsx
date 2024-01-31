@@ -16,11 +16,7 @@ function Profile() {
             <div className='bg-white my-3 w-full h-20 flex justify-between shadow'>
               <h1 className='text-2xl font-semibold  p-5'>MI PERFIL</h1>
             </div>
-
-
-
-            <div className='flex mt-6 '>
-
+            <div className='flex mt-6'>
               <div className="w-full max-w-xs mr-10 ml-6  ">
                 <form className="bg-white shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] rounded px-10 pt-8 pb-12 mb-8 ">
                   <div className="mb-4 ">
