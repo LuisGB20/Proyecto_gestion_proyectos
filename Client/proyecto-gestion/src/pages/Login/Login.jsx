@@ -1,7 +1,9 @@
+import React from 'react';
 import Logo from '../../IMG/logo.png'
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import Modal from 'react-modal';
+import Swal from 'sweetalert2'
 
 function Login() {
     const [usuario, setUsuario] = useState({
@@ -32,14 +34,19 @@ function Login() {
 
     const validar = () => {
         if (usuario.email.trim() === "" || usuario.contrasena.trim() === "") {
-            alert("Por favor, complete todos los campos");
+            Swal.fire({
+                icon: "warning",
+                text: "Por favor, complete todos los campos"
+            })
             return;
         }
         if (usuario.contrasena.length < 8) {
-            alert("La contraseña debe tener al menos 8 caracteres");
+            Swal.fire({
+                icon: 'warning',
+                text: 'La contraseña debe tener al menos 8 caracteres'
+            });
             return;
         }
-
     }
 
     const validarPregunta = async () => {
@@ -60,10 +67,17 @@ function Login() {
             .then(data => {
                 console.log(data)
                 if (data.message === "Pregunta de seguridad incorrecta") {
-                    alert("La respuesta a la pregunta de seguridad es incorrecta");
+                    Swal.fire({
+                        icon: 'error',
+                        text: "La respuesta a la pregunta de seguridad es incorrecta"
+                    });
                     return;
                 }
-                alert("Pregunta de seguridad correcta");
+                Swal.fire({
+                    title: 'Confirmación',
+                    icon: "success",
+                    text: "Pregunta de seguridad correcta"
+                });
                 // Me devuelve el json
                 console.log(data)
                 closeModalPregunta();
@@ -98,13 +112,22 @@ function Login() {
             .then(data => {
                 console.log(data)
                 if (data.message === "Codigo verificado") {
-                    alert("Codigo verificado");
+                    Swal.fire({
+                        icon: "success",
+                        text: "Codigo verificado",
+                        timer: 3000
+                    });
                     openModalPregunta();
                     closeModalCodigo();
                     openModalPregunta();
                 }
                 if (data.message === "Codigo no encontrado") {
-                    alert("Codigo no encontrado");
+                    Swal.fire({
+                        icon: "warning",
+                        text: "Codigo no encontrado",
+                        timer: 3000
+                    });
+                    return;
                 }
             })
             .catch(error => {
@@ -127,7 +150,11 @@ function Login() {
             .then(data => {
                 console.log(data)
                 if (data.message === "Correo enviado") {
-                    alert("Correo enviado");
+                    Swal.fire({
+                        icon: "info",
+                        title: 'Enviado!',
+                        text: "Revisa tu correo electrónico para obtener el código de verificación."
+                    });
                     openModalCodigo();
                 }
             })
@@ -147,10 +174,14 @@ function Login() {
             .then(response => response.json())
             .then(data => {
                 if (data.message === "Usuario no encontrado") {
-                    alert("Usuario no encontrado");
+                    console.log("Usuario no encontrado");
                 }
                 if (data.message === "Contraseña incorrecta") {
-                    alert("Contraseña incorrecta");
+                    Swal.fire({
+                        icon: "error",
+                        text: "Contraseña incorrecta"
+                    });
+                    return;
                 }
                 sessionStorage.setItem('nombre', data.nombre)
                 sessionStorage.setItem('apellido', data.apellido)
