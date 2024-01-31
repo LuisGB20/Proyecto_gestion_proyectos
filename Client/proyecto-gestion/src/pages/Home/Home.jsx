@@ -8,7 +8,7 @@ import Diseño from '../../IMG/diseño.png'
 function Home() {
   return (
     <div className='flex justify-center items-center bg-gradient-to-bl from-indigo-300 to-cyan-100 h-screen'>
-      <div className='absolute left-32'>
+      <div className='absolute left-32 sm:'>
         <div className='flex mb-10'>
           <img src={Logo} alt='' className='w-12'/>
           <p className='text-[#00568D] text-xl'>ProManSys</p>

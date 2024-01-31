@@ -5,7 +5,7 @@ function Login () {
     return (
         <div>
             <div className="bg-slate-200 flex items-center justify-center h-screen">
-                <div className="bg-white h-[75%] w-[35%] rounded-xl grid place-content-center shadow-xl">
+                <div className="bg-white h-[75%] w-[90%] lg:w-[35%] rounded-xl grid place-content-center shadow-xl">
                     <div className="flex justify-center">
                         <img src={Logo} alt="" className="w-10"/>
                         <p className="text-[#00568D] text-xl">ProManSys</p>
