@@ -59,10 +59,6 @@ function App() {
   console.log("isJefe:", isJefe);
   console.log("tokenDecoded:", tokenDecoded);
 
-  if (!tokenDecoded) {
-    // Si el token aún no se ha decodificado, puedes mostrar un loader o algún otro indicador de carga.
-    return <div>Loading...</div>;
-  }
 
   return (
     <>

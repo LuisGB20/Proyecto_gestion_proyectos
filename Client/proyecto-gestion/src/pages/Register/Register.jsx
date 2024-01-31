@@ -3,6 +3,7 @@ import Logo from '../../IMG/logo.png'
 import { Link } from "react-router-dom";
 import Modal from 'react-modal';
 import preguntas_seguridad from '../../data/preguntas';
+import swal from 'sweetalert2'
 
 function Register() {
     const numeroAleatorio = Math.floor(Math.random() * 100);
@@ -182,7 +183,7 @@ function Register() {
 
     return (
         <div className='bg-slate-200 flex items-center justify-center h-screen'>
-            <div className="bg-white h-11/12 w-1/3 rounded-xl grid place-content-center shadow-xl">
+            <div className="bg-white h-11/12 w-[90%] sm:w-1/3 rounded-xl grid place-content-center shadow-xl">
                 <div className="flex flex-col justify-center align-middle w-full h-full">
                     <img src={Logo} alt="" className="w-16 mx-auto mt-5" />
                     <p className="text-[#00568D] text-xl mx-auto font-extrabold italic">ProManSys</p>
@@ -190,11 +191,11 @@ function Register() {
                 <div className="text-center mt-5 mb-5">
                     <p className="text-[#4D4D4D] text-lg font-semibold">Bienvenido a</p>
                     <p className="font-bold text-xl">Sistema De Gestión De Proyectos Empresariales</p>
-                    <p className="text-[#4D4D4D] font-semibold text-lg">Por favor de Iniciar Sesion</p>
+                    <p className="text-[#4D4D4D] font-semibold text-lg">Por favor Registrate</p>
                 </div>
                 <form className='flex justify-center items-center flex-col w-full h-full mx-auto'>
                     <div className='flex flex-col w-full'>
-                        <label className=" text-xl font-semibold italic ml-8">Correo electronico</label>
+                        <label className="text-xl font-semibold italic ml-8">Correo electronico</label>
                         <input
                             required
                             type="email"
@@ -204,9 +205,9 @@ function Register() {
                             className="bg-slate-100 w-11/12 h-10 mx-auto rounded-lg mb-4 pl-4 outline-none"
                         />
                     </div>
-                    <div className="grid grid-cols-2 w-full ml-10">
+                    <div className="grid sm:grid-cols-2 w-full ml-10">
                         <div className='w-full m-auto'>
-                            <label className='text-xl font-semibold italic'>Nombre</label>
+                            <label className='text-xl font-semibold italic ml-5 sm:ml-0'>Nombre</label>
                             <input
                                 required
                                 placeholder="Ingresa tu primer nombre"
@@ -217,7 +218,7 @@ function Register() {
                             />
                         </div>
                         <div className='w-full m-auto'>
-                            <label className='text-xl font-semibold italic'>Apellido</label>
+                            <label className='text-xl font-semibold italic ml-5 sm:ml-0'>Apellido</label>
                             <input
                                 required
                                 placeholder="Ingresa tu segundo nombre"
@@ -228,7 +229,7 @@ function Register() {
                             />
                         </div>
                         <div>
-                            <label className='text-xl font-semibold italic'>Crear Contraseña</label>
+                            <label className='text-xl font-semibold italic ml-5 sm:ml-0'>Crear Contraseña</label>
                             <input
                                 required
                                 placeholder="Escribe tu contraseña"
@@ -239,7 +240,7 @@ function Register() {
                             />
                         </div>
                         <div>
-                            <label className='text-xl font-semibold italic'>Confirmar Contraseña</label>
+                            <label className='text-xl font-semibold italic ml-5 sm:ml-0'>Confirmar Contraseña</label>
                             <input
                                 required
                                 placeholder="Confirma tu contraseña"
@@ -267,7 +268,7 @@ function Register() {
                             <span className="text-blue-400 ml-2">Iniciar Sesion</span>
                         </Link>
                     </p>
-                    <p className=' text-center mt-3 text-xl font-semibold italic mb-3'>Al registrarse aceptas nuestras condiciones de uso y
+                    <p className='text-center mt-3 text-xl font-semibold italic mb-3'>Al registrarse aceptas nuestras condiciones de uso y
                         <Link to={"/Politicas"} className='text-blue-400'> politica de privacidad.</Link>
                     </p>
                 </div>
@@ -276,7 +277,7 @@ function Register() {
                 isOpen={modalCorreoIsOpen}
                 onRequestClose={closeModalCorreo}
                 contentLabel="Example Modal"
-                className="bg-white rounded-lg shadow-lg p-6 w-1/2 m-auto my-52 flex flex-col justify-center align-middle"
+                className="bg-white rounded-lg shadow-lg p-6 w-96 sm:w-1/2 m-auto my-52 flex flex-col justify-center align-middle"
             >
                 <h2 className="text-2xl font-bold mb-4">Te enviamos un código a tu correo, revisa tu bandeja de entrada</h2>
                 <p className="text-lg mb-4">Ingresa tu código de verificación</p>
@@ -298,7 +299,7 @@ function Register() {
                 isOpen={modalPreguntaIsOpen}
                 onRequestClose={closeModalPregunta}
                 contentLabel="Example Modal"
-                className="bg-white rounded-lg shadow-lg p-6 w-1/2 m-auto my-52 flex flex-col justify-center align-middle"
+                className="bg-white rounded-lg shadow-lg p-6 w-96 sm:w-1/2 m-auto my-52 flex flex-col justify-center align-middle"
             >
                 <h2 className="text-2xl font-bold mb-4">Selecciona una pregunta de seguridad</h2>
                 <select

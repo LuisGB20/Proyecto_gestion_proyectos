@@ -164,12 +164,12 @@ function Login() {
 
     return (
         <div className='bg-slate-200 flex items-center justify-center h-screen w-full'>
-            <div className="bg-white h-11/12 w-1/3 rounded-xl grid place-content-center shadow-xl">
+            <div className="bg-white h-11/12 w-[90%] sm:w-1/3 rounded-xl grid place-content-center shadow-xl">
                 <div className="flex justify-center w-full flex-col mx-auto align-middle">
                     <img src={Logo} alt="" className="w-20 mx-auto mt-5" />
                     <p className="text-[#00568D] text-xl mx-auto font-extrabold italic">ProManSys</p>
                 </div>
-                <div className="text-center my-10">
+                <div className="text-center my-5">
                     <p className="text-[#4D4D4D] text-lg font-semibold">Bienvenido a</p>
                     <p className="font-bold text-xl">Sistema De Gestión De Proyectos Empresariales</p>
                     <p className="text-[#4D4D4D] font-semibold text-lg">Por favor de Iniciar Sesion</p>
@@ -183,7 +183,7 @@ function Login() {
                             value={usuario.email}
                             onChange={(e) => setUsuario({ ...usuario, email: e.target.value })}
                             placeholder="Ingresa tu correo electronico"
-                            className="bg-slate-100 w-11/12 h-10 mx-auto rounded-lg mb-4 pl-4 outline-none"
+                            className="bg-slate-100 w-11/12 h-10 mx-auto rounded-lg pl-4 outline-none"
                         />
                         <label className="text-xl font-semibold italic mt-5">Contraseña</label>
                         <input
@@ -192,7 +192,7 @@ function Login() {
                             value={usuario.contrasena}
                             onChange={(e) => setUsuario({ ...usuario, contrasena: e.target.value })}
                             placeholder="Ingresa tu contraseña"
-                            className="bg-slate-100 w-11/12 h-10 mx-auto rounded-lg mb-4 pl-4 outline-none"
+                            className="bg-slate-100 w-11/12 h-10 mx-auto rounded-lg pl-4 outline-none"
                         />
                     </form>
                     <div>
