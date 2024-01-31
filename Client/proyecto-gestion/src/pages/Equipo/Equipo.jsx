@@ -1,6 +1,5 @@
-import React from 'react'
+
 import Header from '../../components/header'
-import SiderbarProfile from '../../components/SidebarProfile'
 import TeamProyecto from '../../Img/team.png'
 import EquipoPortada from '../../Img/equipoPortada.jpg'
 import Miembro1 from '../../Img/miembro1.jpg'
@@ -13,7 +12,6 @@ function Equipo() {
     <div className='bg-slate-50'>
             <Header />
             <div className='flex'>
-                <SiderbarProfile />
                 <div className='w-full h-full'>
                     <div className='w-full h-full'>
                         <div className='bg-white my-3 w-full h-20 flex justify-between shadow'>

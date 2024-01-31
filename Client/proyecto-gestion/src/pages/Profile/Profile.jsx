@@ -1,6 +1,5 @@
-import React from 'react'
+
 import Header from '../../components/header'
-import SiderbarProfile from '../../components/SidebarProfile'
 import Whatsapp from '../../Img/whatsapp.png'
 import Telegram from '../../Img/telegram.png'
 import Netflix from '../../Img/netflix.png'
@@ -10,7 +9,6 @@ function Profile() {
     <div className='bg-slate-50'>
       <Header />
       <div className='flex'>
-        <SiderbarProfile />
         <div className='w-full h-full'>
           <div className='w-full h-full '>
             <div className='bg-white my-3 w-full h-20 flex justify-between shadow'>

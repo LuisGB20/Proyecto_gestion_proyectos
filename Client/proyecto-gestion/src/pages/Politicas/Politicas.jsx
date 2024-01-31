@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Logo from '../../Img/logo.png'
 
 function Politicas() {

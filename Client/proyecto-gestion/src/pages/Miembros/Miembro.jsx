@@ -1,5 +1,4 @@
     import Header from "../../components/header"
-    import SindebarMiembros from "../../components/SindebarMiembros" 
     import TarjetasMiembros from "./components/TarjetasMiembros"
     import TarjetaMiembro from "./components/TarjetaMiembro"
     import TarjetasMiembross from "./components/TarjetasMiembross"
@@ -9,7 +8,6 @@
                 <div className='w-full h-full bg-slate-200'>
         <Header />
         <div className='flex w-full h-full'>
-            <SindebarMiembros />
             <div className='w-full'>
             <div className='bg-white my-3 w-full h-20'>
             </div>
