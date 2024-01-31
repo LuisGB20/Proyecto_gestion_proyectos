@@ -100,7 +100,6 @@ function Register() {
             .then(data => {
                 if (data.message === "Codigo verificado") {
                     alert("Codigo verificado")
-                    handleQuestion();
                 } else {
                     alert("Codigo incorrecto")
                 }

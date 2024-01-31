@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import jwtDecode from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 import Home from '../src/pages/Home/Home'
 import Login from "./pages/Login/Login";
 import Register from './pages/Register/Register';
@@ -22,17 +22,42 @@ import PerfilMiembro from "./pages/perfilMiembro/PerfilMiembro";
 import Dashboard from "./pages/Dash/Dashboard";
 import DashboardEquipos from "./pages/DashEquipos/DashboardEquipos";
 import Recuperar from './pages/RecuperarContraseña/Recuperar'
-import {ProtectedRoutes} from './Routes/ProtectedRoutes.js'
+import ProtectedRoutes from './Routes/ProtectedRoutes.jsx'
+import ProtectedRoutesJefe from "./Routes/ProtectedRoutesJefe.jsx";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [isRoleValid, setRoleValid] = useState(false);
+  const [isJefe, setIsJefe] = useState(false);
+  const [rol, setRol] = useState('');
+  const [tokenDecoded, setTokenDecoded] = useState(false);
 
-  const token = sessionStorage.getItem('token');
-  const decodedToken = jwtDecode(token);
-  console.log(decodedToken);
+  useEffect(() => {
+    const token = sessionStorage.getItem('token');
 
-  const isRoleValid = decodedToken.roles.includes('Programador') || decodedToken.roles.includes('Analista') || decodedToken.roles.includes('Diseñador');
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      console.log(decodedToken);
+      console.log(decodedToken.roles);
 
-  const isJefe = decodedToken.roles.includes('Jefe');
+      if (decodedToken.roles === 'Programador' || decodedToken.roles === 'Analista' || decodedToken.roles === 'Diseñador') {
+        setRoleValid(true);
+        setRol(decodedToken.roles);
+      }
+      if (decodedToken.roles === 'Jefe') {
+        setIsJefe(true);
+        setRol(decodedToken.roles);
+      }
+
+      setTokenDecoded(true);
+    } else {
+      console.log("No hay token");
+    }
+  }, []);
+
+  console.log("isRoleValid:", isRoleValid);
+  console.log("isJefe:", isJefe);
+  console.log("tokenDecoded:", tokenDecoded);
 
 
   return (
@@ -49,7 +74,7 @@ function App() {
           <Route path='/Register' element={<Register />} />
 
           {/* Miembros */}
-          <Route element={<ProtectedRoutes onActivate={isRoleValid} redirectPath={'/TodosEquipos'}/>}>
+          <Route element={<ProtectedRoutes canActivate={rol} redirectPath='/' />}>
             <Route path='/ResourcesAndAssets' element={<ResourcesAndAssets />} />
             <Route path='/SolicitudActivos' element={<SolicitudActivos />} />
             <Route path='/SolicitudRecursos' element={<SolicitudRecursos />} />
@@ -59,7 +84,7 @@ function App() {
           </Route>
 
           {/* Jefe */}
-          <Route element={<ProtectedRoutes canActivate={isJefe} redirectPath={'/Dashboard'}/>}>
+          <Route element={<ProtectedRoutesJefe canActivate={rol} redirectPath='/Login' />}>
             <Route path='/TodosEquipos' element={<TodosEquipos />} />
             <Route path='/NuevoProyecto' element={<NuevoProyecto />} />
             <Route path='/NuevoEquipo' element={<NuevoEquipo />} />
@@ -76,4 +101,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
