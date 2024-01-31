@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import jwtDecode from 'jwt-decode';
 import Home from '../src/pages/Home/Home'
 import Login from "./pages/Login/Login";
@@ -49,7 +49,7 @@ function App() {
           <Route path='/Register' element={<Register />} />
 
           {/* Miembros */}
-          <Route element={<ProtectedRoutes onAc/>}>
+          <Route element={<ProtectedRoutes onActivate={isRoleValid} redirectPath={'/TodosEquipos'}/>}>
             <Route path='/ResourcesAndAssets' element={<ResourcesAndAssets />} />
             <Route path='/SolicitudActivos' element={<SolicitudActivos />} />
             <Route path='/SolicitudRecursos' element={<SolicitudRecursos />} />
@@ -59,7 +59,7 @@ function App() {
           </Route>
 
           {/* Jefe */}
-          <Route>
+          <Route element={<ProtectedRoutes canActivate={isJefe} redirectPath={'/Dashboard'}/>}>
             <Route path='/TodosEquipos' element={<TodosEquipos />} />
             <Route path='/NuevoProyecto' element={<NuevoProyecto />} />
             <Route path='/NuevoEquipo' element={<NuevoEquipo />} />

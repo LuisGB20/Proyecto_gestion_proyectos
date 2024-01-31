@@ -1,8 +1,8 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
-const ProtectedRoutes = ({ canActivate, redirectPath }) => {
+const ProtectedRoutes = ( canActivate, redirectPath ) => {
   if (!canActivate) {
-    return <Navigate to={redirectPath} replace/>;
+    return <Link to={redirectPath} replace/>;
   }
   return <Outlet />;
 };
