@@ -44,7 +44,7 @@
             <li className='mx-auto text-center my-10'>
                 <Link
                 className='font-medium text-center text-lg italic mx-auto hover:bg-gradient-to-r hover:from-[#1E4C6A]  hover:to-[#1B7FC5] p-4 rounded-lg hover:text-white'
-                to='/cerrar-sesion'
+                to='/'
                 >
                 Cerrar Sesión
                 </Link>
@@ -103,7 +103,7 @@
                 <li className='mx-auto text-center my-10'>
                     <Link
                     className='font-medium text-center text-lg italic mx-auto hover:bg-gradient-to-r hover:from-[#1E4C6A]  hover:to-[#1B7FC5] p-4 rounded-lg hover:text-white'
-                    to='/cerrar-sesion'
+                    to='/'
                     onClick={() => setMenuOpen(false)}
                     >
                     Cerrar Sesión

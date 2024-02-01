@@ -3,7 +3,7 @@ import Logo from '../../IMG/logo.png'
 import { Link } from "react-router-dom";
 import Modal from 'react-modal';
 import preguntas_seguridad from '../../data/preguntas';
-import swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 function Register() {
     const numeroAleatorio = Math.floor(Math.random() * 100);
@@ -39,6 +39,13 @@ function Register() {
     };
 
     const registrarRespuesta = async () => {
+        if (pregunta.trim() === "" || respuesta.trim() === "") {
+            Swal.fire({
+                icon: "warning",
+                text: "Por favor, completa todos los campos"
+            });
+            return;
+        }
         console.log(pregunta)
         const response = await fetch('https://localhost:4000/crearRespuestaPregunta', {
             method: 'POST',
@@ -64,27 +71,38 @@ function Register() {
                         contrasena: "",
                         rol_id: 3,
                     })
+                    closeModalPregunta()
+                    setRespuesta("")
+                    setPregunta("")
+                    setUsuario({
+                        nombre: "",
+                        apellido: "",
+                        email: "",
+                        contrasena: "",
+                        rol_id: 3,
+                    })
+                    window.location.href = 'https://localhost:5173/Login';
                 } else {
-                    alert("Error al crear la respuesta")
+                    Swal.fire({
+                        icon: "error",
+                        text: "Error al crear la respuesta"
+                    });
+                    return;
                 }
             })
             .catch(error => {
                 console.log(error)
             })
-            closeModalPregunta()
-            setRespuesta("")
-            setPregunta("")
-            setUsuario({
-                nombre: "",
-                apellido: "",
-                email: "",
-                contrasena: "",
-                rol_id: 3,
-            })
-            window.location.href = 'https://localhost:5173/Login';
         }
 
     const Validarcodigo = async () => {
+        if (codigoVerificacion.trim() === "") {
+            Swal.fire({
+                icon: "warning",
+                text: "Por favor, ingresa el código de verificación"
+            });
+            return;
+        }
         const respuesta = await fetch('https://localhost:4000/verificacion-codigo', {
             method: 'POST',
             headers: {
@@ -100,17 +118,26 @@ function Register() {
             .then(response => response.json())
             .then(data => {
                 if (data.message === "Codigo verificado") {
-                    alert("Codigo verificado")
+                    Swal.fire({
+                        icon: "success",
+                        text: "Código verificado",
+                        timer: 3000
+                    });
+                    handleQuestion();
+                    setCodigoVerificacion("")
+                    closeModalCorreo()
+                    openModalPregunta();
                 } else {
-                    alert("Codigo incorrecto")
+                    Swal.fire({
+                        icon: "error",
+                        text: "Código incorrecto"
+                    });
+                    return;
                 }
             })
             .catch(error => {
                 console.log(error)
             })
-        closeModalCorreo()
-        setCodigoVerificacion("")
-        openModalPregunta();
     }
 
     const handleEnviarCorreo = async () => {
@@ -134,25 +161,34 @@ function Register() {
     }
 
     const validar = () => {
+        if (usuario.nombre.trim() === "" || usuario.apellido.trim() === "" || usuario.email.trim() === "" || confirmarContra.trim() === "" || usuario.contrasena.trim() === "") {
+            Swal.fire({
+                icon: "warning",
+                text: "Por favor, complete todos los campos"
+            });
+            return;
+        }
         if (usuario.contrasena !== confirmarContra) {
-            alert("Las contraseñas no coinciden")
-            return
+            Swal.fire({
+                icon: "warning",
+                text: "Las contraseñas no coinciden"
+            });
+            return;
         }
         if (usuario.contrasena.length < 8) {
-            alert("La contraseña debe tener al menos 8 caracteres")
-            return
+            Swal.fire({
+                icon: 'warning',
+                text: 'La contraseña debe tener al menos 8 caracteres'
+            });
+            return;
         }
-        //Validar campos
-        if (usuario.nombre.trim() === "" || usuario.apellido.trim() === "" || usuario.email.trim() === "" || confirmarContra.trim() === "") {
-            alert("Por favor, complete todos los campos")
-            return
-        }
-
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        validar();
+        if(!validar()) {
+            return;
+        }
         console.log(usuario)
         const respuesta = await fetch('https://localhost:4000/registro', {
             method: 'POST',
@@ -165,12 +201,24 @@ function Register() {
             .then(response => response.json())
             .then(data => {
                 if (data.message === "El correo ya está en uso") {
-                    alert("El correo ya está en uso")
+                    Swal.fire({
+                        icon: 'warning',
+                        text: "El correo ya está en uso"
+                    });
+                    return;
                 } else if (data.status === 500) {
-                    alert("Error al registrar")
+                    Swal.fire({
+                        icon: 'error',
+                        text: "Error al registrar"
+                    });
+                    return;
                 }
                 console.log(data)
-                alert("Registro exitoso");
+                Swal.fire({
+                    icon: "success",
+                    text: "Registro exitoso",
+                    timer: 3000
+                })
                 openModalCorreo();
                 handleEnviarCorreo();
             })

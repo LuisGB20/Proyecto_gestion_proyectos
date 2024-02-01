@@ -45,6 +45,22 @@
                 Recursos y activos
                 </Link>
             </li>
+            <li className='mx-auto text-center my-10'>
+                <Link
+                to='/SolicitudRecursos'
+                className='font-medium text-center text-lg italic mx-auto hover:bg-gradient-to-r hover:from-[#1E4C6A]  hover:to-[#1B7FC5] p-4 rounded-lg hover:text-white'
+                >
+                Recursos 
+                </Link>
+            </li>
+            <li className='mx-auto text-center my-10'>
+                <Link
+                to='/SolicitudActivos'
+                className='font-medium text-center text-lg italic mx-auto hover:bg-gradient-to-r hover:from-[#1E4C6A]  hover:to-[#1B7FC5] p-4 rounded-lg hover:text-white'
+                >
+                activos
+                </Link>
+            </li>
             <li className='mx-auto text-center my-10' onClick={cerrarSesion}>
                 <Link
                 className='font-medium text-center text-lg italic mx-auto hover:bg-gradient-to-r hover:from-[#1E4C6A]  hover:to-[#1B7FC5] p-4 rounded-lg hover:text-white'
@@ -102,6 +118,24 @@
                     onClick={() => setMenuOpen(false)}
                     >
                     Recursos y activos
+                    </Link>
+                </li>
+                <li className='mx-auto text-center my-10'>
+                    <Link
+                    to='/SolicitudRecursos'
+                    className='font-medium text-center text-lg italic mx-auto hover:bg-gradient-to-r hover:from-[#1E4C6A]  hover:to-[#1B7FC5] p-4 rounded-lg hover:text-white'
+                    onClick={() => setMenuOpen(false)}
+                    >
+                    Recursos 
+                    </Link>
+                </li>
+                <li className='mx-auto text-center my-10'>
+                    <Link
+                    to='/SolicitudActivos'
+                    className='font-medium text-center text-lg italic mx-auto hover:bg-gradient-to-r hover:from-[#1E4C6A]  hover:to-[#1B7FC5] p-4 rounded-lg hover:text-white'
+                    onClick={() => setMenuOpen(false)}
+                    >
+                    activos
                     </Link>
                 </li>
                 <li className='mx-auto text-center my-10' onClick={() => setMenuOpen(false)}>

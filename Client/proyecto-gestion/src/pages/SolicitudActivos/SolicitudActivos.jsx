@@ -1,5 +1,5 @@
     import Header from "../../components/header"
-
+    import SidebarMiDashboard from "../../components/SidebarMiDashboard"
     import TarjetasActivas from "./components/TarjetasActivas"
     import TarjetasDisponibilidad from "../SolicitudRecursos/components/TarjetasDisponibilidad"
     import TarjetasServidores from "./components/TarjetasServidores"
@@ -9,7 +9,7 @@
                 <div className='w-full h-full bg-slate-200'>
             <Header />
             <div className='flex w-full h-full'>
-                
+                <SidebarMiDashboard/>
                 <div className='w-full'>
                 <div className='bg-white my-3 w-full h-20'>
                     <h1 className='text-2xl font-semibold italic p-5'>Activos</h1>
@@ -40,8 +40,6 @@
                 </div>
                 </div>
             </div>
-            </div>
-            <div className=" w-full h-16">
             </div>
                 </>
             )

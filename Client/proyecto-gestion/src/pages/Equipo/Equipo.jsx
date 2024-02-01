@@ -5,6 +5,7 @@ import EquipoPortada from '../../Img/equipoPortada.jpg'
 import Miembro1 from '../../Img/miembro1.jpg'
 import RolesEquipo from '../../Img/rolesEquipo.png'
 import AsignacionEquipo from '../../Img/asignacion.png'
+import SidebarAdmin from '../../components/SidebarAdmin'
 
 
 function Equipo() {
@@ -12,6 +13,7 @@ function Equipo() {
     <div className='bg-slate-50'>
             <Header />
             <div className='flex'>
+                <SidebarAdmin/>
                 <div className='w-full h-full'>
                     <div className='w-full h-full'>
                         <div className='bg-white my-3 w-full h-20 flex justify-between shadow'>
