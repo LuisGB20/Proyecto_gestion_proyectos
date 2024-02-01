@@ -8,7 +8,7 @@
         <>
         {/* Estructura para pantallas grandes */}
         <div className='hidden lg:block bg-white w-72 h-auto border-2'>
-            <ul className='my-10 mx-auto'>
+            <ul className='my-10 mx-auto '>
             <li className='mx-auto text-center my-10'>
                 <Link
                 className='font-medium text-center text-lg italic mx-auto hover:bg-gradient-to-r hover:from-[#1E4C6A]  hover:to-[#1B7FC5] p-4 rounded-lg hover:text-white'
@@ -53,9 +53,9 @@
         </div>
 
         {/* Menú hamburguesa para pantallas pequeñas */}
-        <div className='lg:hidden'>
+        <div className='lg:hidden '>
             <button
-            className='bg-gray-800 text-white p-2'
+            className='bg-gray-800 text-white p-2 m-4'
             onClick={() => setMenuOpen(!isMenuOpen)}
             >
             ☰

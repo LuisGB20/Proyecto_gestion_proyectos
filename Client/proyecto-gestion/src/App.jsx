@@ -65,34 +65,34 @@ function App() {
       <BrowserRouter>
         <Routes>
           {/* General */}
-          <Route path='/Profile' element={<Profile />} />
-          <Route path='/Politicas' element={<Politicas />} />
-          <Route path='/*' element={<NotFound />} />
+          <Route path='/Profile' element={<Profile />} />  {/* responsive */}  
+          <Route path='/Politicas' element={<Politicas />} /> {/* responsive */}  
+          <Route path='/*' element={<NotFound />} /> {/* responsive */}
           <Route path='/RecuperarContraseña' element={<Recuperar />} /> {/* responsive */}
           <Route path='/' element={<Home />} /> {/* responsive */}
           <Route path='/Login' element={<Login />} /> {/* responsive */}
-          <Route path='/Register' element={<Register />} /> {/* responsive */}
+          <Route path='/Register' element={<Register />} /> {/* responsive  */}
 
           {/* Miembros */}
           <Route element={<ProtectedRoutes canActivate={rol} redirectPath='/' />}>
-            <Route path='/ResourcesAndAssets' element={<ResourcesAndAssets />} />
-            <Route path='/SolicitudActivos' element={<SolicitudActivos />} />
-            <Route path='/SolicitudRecursos' element={<SolicitudRecursos />} />
-            <Route path='/TableroMiembros' element={<TableroMiembros />} />
-            <Route path='/Dashboard' element={<Dashboard />} />
-            <Route path='/DashboardEquipos' element={<DashboardEquipos />} />
+            <Route path='/ResourcesAndAssets' element={<ResourcesAndAssets />} /> {/* responsive */}
+            <Route path='/SolicitudActivos' element={<SolicitudActivos />} /> {/* responsive */}
+            <Route path='/SolicitudRecursos' element={<SolicitudRecursos />} /> {/* responsive */}
+            <Route path='/TableroMiembros' element={<TableroMiembros />} /> {/* responsive */}
+            <Route path='/Dashboard' element={<Dashboard />} />  {/* responsive */}  
+            <Route path='/DashboardEquipos' element={<DashboardEquipos />} /> {/* responsive */}  
           </Route>
 
           {/* Jefe */}
           <Route element={<ProtectedRoutesJefe canActivate={rol} redirectPath='/Login' />}>
-            <Route path='/TodosEquipos' element={<TodosEquipos />} />
-            <Route path='/NuevoProyecto' element={<NuevoProyecto />} />
-            <Route path='/NuevoEquipo' element={<NuevoEquipo />} />
-            <Route path='/PerfilMiembro' element={<PerfilMiembro />} />
+            <Route path='/TodosEquipos' element={<TodosEquipos />} /> {/* responsive */} 
+            <Route path='/NuevoProyecto' element={<NuevoProyecto />} /> {/* responsive */} 
+            <Route path='/NuevoEquipo' element={<NuevoEquipo />} /> {/* responsive */} 
+            <Route path='/PerfilMiembro' element={<PerfilMiembro />} /> {/* responsive */} 
             <Route path='/Proyecto' element={<Proyecto />} />
             <Route path='/Equipo' element={<Equipo />} />
             <Route path='/Miembro' element={<Miembro />} />
-            <Route path='/TodosProyectos' element={<TodosProyectos />} />
+            <Route path='/TodosProyectos' element={<TodosProyectos />} /> {/* responsive */} 
             <Route path='/UsuarioMiembro' element={<UsuarioMiembro />} />
           </Route>
         </Routes>
