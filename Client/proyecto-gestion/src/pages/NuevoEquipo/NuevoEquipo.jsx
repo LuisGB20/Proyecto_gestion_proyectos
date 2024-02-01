@@ -1,16 +1,16 @@
-import React from 'react'
+
 import Header from '../../components/header'
-import SiderbarProfile from '../../components/SidebarProfile'
 import Anadir from '../../Img/anadir.png'
 import UsuarioAgregado from '../../Img/usuarioagregado.png'
 import EliminarUsuario from '../../Img/eliminarUsuario.png'
+import SidebarAdmin from '../../components/SidebarAdmin'
 
 function NuevoEquipo() {
     return (
         <div className='bg-slate-50'>
             <Header />
             <div className='flex'>
-                <SiderbarProfile />
+                <SidebarAdmin/>
                 <div className='w-full h-full'>
                     <div className='w-full h-full'>
                         <div className='bg-white my-3 w-full h-20 flex justify-between shadow'>

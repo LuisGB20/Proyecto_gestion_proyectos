@@ -1,6 +1,5 @@
-import React from 'react'
+
 import Header from '../../components/header'
-import SiderbarProfile from '../../components/SidebarProfile'
 import SpotifyProyecto from '../../Img/spotifyProyecto.jpg'
 import TeamProyecto from '../../Img/team.png'
 import SnapchatProyecto from '../../Img/snapchat.jpg'
@@ -8,6 +7,7 @@ import GooglePlay from '../../Img/googleplay.png'
 import Instagram from '../../Img/instagram.png'
 import ServidorProyecto from '../../Img/servidor.png'
 import Financiamiento from '../../Img/financiamiento.png'
+import SidebarAdmin from '../../components/SidebarAdmin'
 
 
 function Proyecto() {
@@ -15,7 +15,7 @@ function Proyecto() {
         <div className='bg-slate-50'>
             <Header />
             <div className='flex'>
-                <SiderbarProfile />
+                <SidebarAdmin/>
                 <div className='w-full h-full'>
                     <div className='w-full h-full'>
                         <div className='bg-white my-3 w-full h-20 flex justify-between shadow'>

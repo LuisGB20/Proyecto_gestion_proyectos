@@ -1,6 +1,6 @@
 
 import Header from '../../components/header'
-import SidebarRecursos from '../../components/SidebarRecursos'
+import SidebarMiDashboard from '../../components/SidebarMiDashboard'
 import TarjetasDisponibilidad from './components/TarjetasDisponibilidad'
 
 function SolicitudRecursos() {
@@ -9,7 +9,7 @@ function SolicitudRecursos() {
     <div className='w-full h-full bg-slate-200'>
       <Header area={"Dashboard de recursos y activos"} />
       <div className='flex w-full h-full'>
-        <SidebarRecursos />
+        <SidebarMiDashboard/>
         <div className='w-full'>
           <div className='bg-white my-3 w-full h-20'>
             <h1 className='text-2xl font-semibold italic p-5'>Recursos</h1>

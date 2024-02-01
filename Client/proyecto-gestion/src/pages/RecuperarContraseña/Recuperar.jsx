@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+
 import Logo from '../../IMG/logo.png'
 
 function RecuperarContraseña() {

@@ -3,7 +3,6 @@ import Logo from '../../IMG/logo.png'
 import { Link } from "react-router-dom";
 import Modal from 'react-modal';
 import preguntas_seguridad from '../../data/preguntas';
-import swal from 'sweetalert2'
 import Swal from 'sweetalert2';
 
 function Register() {
