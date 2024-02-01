@@ -52,7 +52,7 @@ function App() {
 
           {/* Jefe */}
           <Route element={<JefeRoute />}>
-            <Route path='/TodosEquipos' component={<TodosEquipos />} is />
+            <Route path='/TodosEquipos' component={<TodosEquipos />}  />
             <Route path='/NuevoProyecto' element={<NuevoProyecto />} />
             <Route path='/NuevoEquipo' element={<NuevoEquipo />} />
             <Route path='/PerfilMiembro' element={<PerfilMiembro />} />
