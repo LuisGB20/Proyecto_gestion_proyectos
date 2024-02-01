@@ -1,18 +1,120 @@
+    import { useState } from 'react';
+    import { Link } from 'react-router-dom';
 
-import { Link } from 'react-router-dom'
+    function SidebarAdmin() {
+    const [isMenuOpen, setMenuOpen] = useState(false);
 
-function SidebarAdmin() {
     return (
-        <div className='bg-white w-72 h-auto border-2'>
+        <>
+        {/* Estructura para pantallas grandes */}
+        <div className='hidden lg:block bg-white w-72 h-auto border-2'>
             <ul className='my-10 mx-auto'>
-                <li className='mx-auto text-center my-10'><Link className='font-medium text-center text-lg italic mx-auto hover:bg-gradient-to-r hover:from-[#1E4C6A]  hover:to-[#1B7FC5] p-4 rounded-lg hover:text-white'>Dashboard administrador</Link></li>
-                <li className='mx-auto text-center my-10'><Link className='font-medium text-center text-lg italic mx-auto hover:bg-gradient-to-r hover:from-[#1E4C6A]  hover:to-[#1B7FC5] p-4 rounded-lg hover:text-white' to="/TodosProyectos">Proyectos</Link></li>
-                <li className='mx-auto text-center my-10'><Link className='font-medium text-center text-lg italic mx-auto hover:bg-gradient-to-r hover:from-[#1E4C6A]  hover:to-[#1B7FC5] p-4 rounded-lg hover:text-white' to="/TodosEquipos">Equipos</Link></li>
-                <li className='mx-auto text-center my-10'><Link className='font-medium text-center text-lg italic mx-auto hover:bg-gradient-to-r hover:from-[#1E4C6A]  hover:to-[#1B7FC5] p-4 rounded-lg hover:text-white' to="/UsuarioMiembro">Miembros</Link></li>
-                <li className='mx-auto text-center my-10'><Link className='font-medium text-center text-lg italic mx-auto hover:bg-gradient-to-r hover:from-[#1E4C6A]  hover:to-[#1B7FC5] p-4 rounded-lg hover:text-white'>Cerrar Sesión</Link></li>
+            <li className='mx-auto text-center my-10'>
+                <Link
+                className='font-medium text-center text-lg italic mx-auto hover:bg-gradient-to-r hover:from-[#1E4C6A]  hover:to-[#1B7FC5] p-4 rounded-lg hover:text-white'
+                to='/dashboard-admin'
+                >
+                Dashboard administrador
+                </Link>
+            </li>
+            <li className='mx-auto text-center my-10'>
+                <Link
+                className='font-medium text-center text-lg italic mx-auto hover:bg-gradient-to-r hover:from-[#1E4C6A]  hover:to-[#1B7FC5] p-4 rounded-lg hover:text-white'
+                to='/TodosProyectos'
+                >
+                Proyectos
+                </Link>
+            </li>
+            <li className='mx-auto text-center my-10'>
+                <Link
+                className='font-medium text-center text-lg italic mx-auto hover:bg-gradient-to-r hover:from-[#1E4C6A]  hover:to-[#1B7FC5] p-4 rounded-lg hover:text-white'
+                to='/TodosEquipos'
+                >
+                Equipos
+                </Link>
+            </li>
+            <li className='mx-auto text-center my-10'>
+                <Link
+                className='font-medium text-center text-lg italic mx-auto hover:bg-gradient-to-r hover:from-[#1E4C6A]  hover:to-[#1B7FC5] p-4 rounded-lg hover:text-white'
+                to='/UsuarioMiembro'
+                >
+                Miembros
+                </Link>
+            </li>
+            <li className='mx-auto text-center my-10'>
+                <Link
+                className='font-medium text-center text-lg italic mx-auto hover:bg-gradient-to-r hover:from-[#1E4C6A]  hover:to-[#1B7FC5] p-4 rounded-lg hover:text-white'
+                to='/'
+                >
+                Cerrar Sesión
+                </Link>
+            </li>
             </ul>
         </div>
-    )
-}
 
-export default SidebarAdmin
+        {/* Menú hamburguesa para pantallas pequeñas */}
+        <div className='lg:hidden'>
+            <button
+            className='bg-gray-800 text-white p-2'
+            onClick={() => setMenuOpen(!isMenuOpen)}
+            >
+            ☰
+            </button>
+
+            {isMenuOpen && (
+            <div className='bg-white w-72 h-auto border-2'>
+                <ul className='my-10 mx-auto'>
+                <li className='mx-auto text-center my-10'>
+                    <Link
+                    className='font-medium text-center text-lg italic mx-auto hover:bg-gradient-to-r hover:from-[#1E4C6A]  hover:to-[#1B7FC5] p-4 rounded-lg hover:text-white'
+                    to='/dashboard-admin'
+                    onClick={() => setMenuOpen(false)}
+                    >
+                    Dashboard administrador
+                    </Link>
+                </li>
+                <li className='mx-auto text-center my-10'>
+                    <Link
+                    className='font-medium text-center text-lg italic mx-auto hover:bg-gradient-to-r hover:from-[#1E4C6A]  hover:to-[#1B7FC5] p-4 rounded-lg hover:text-white'
+                    to='/TodosProyectos'
+                    onClick={() => setMenuOpen(false)}
+                    >
+                    Proyectos
+                    </Link>
+                </li>
+                <li className='mx-auto text-center my-10'>
+                    <Link
+                    className='font-medium text-center text-lg italic mx-auto hover:bg-gradient-to-r hover:from-[#1E4C6A]  hover:to-[#1B7FC5] p-4 rounded-lg hover:text-white'
+                    to='/TodosEquipos'
+                    onClick={() => setMenuOpen(false)}
+                    >
+                    Equipos
+                    </Link>
+                </li>
+                <li className='mx-auto text-center my-10'>
+                    <Link
+                    className='font-medium text-center text-lg italic mx-auto hover:bg-gradient-to-r hover:from-[#1E4C6A]  hover:to-[#1B7FC5] p-4 rounded-lg hover:text-white'
+                    to='/UsuarioMiembro'
+                    onClick={() => setMenuOpen(false)}
+                    >
+                    Miembros
+                    </Link>
+                </li>
+                <li className='mx-auto text-center my-10'>
+                    <Link
+                    className='font-medium text-center text-lg italic mx-auto hover:bg-gradient-to-r hover:from-[#1E4C6A]  hover:to-[#1B7FC5] p-4 rounded-lg hover:text-white'
+                    to='/'
+                    onClick={() => setMenuOpen(false)}
+                    >
+                    Cerrar Sesión
+                    </Link>
+                </li>
+                </ul>
+            </div>
+            )}
+        </div>
+        </>
+    );
+    }
+
+    export default SidebarAdmin;

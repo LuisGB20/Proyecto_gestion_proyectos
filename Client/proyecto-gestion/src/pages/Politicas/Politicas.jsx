@@ -1,10 +1,10 @@
-import React from 'react'
+
 import Logo from '../../Img/logo.png'
 
 function Politicas() {
     return (
         <div className='bg-slate-200 w-full h-full flex '>
-            <div className="container mx-auto m-5 w-2/3 h-full p-5 bg-white shadow-lg rounded-md">
+            <div className="container mx-auto m-5 w-5/6 sm:w-2/3 h-full p-5 bg-white shadow-lg rounded-md">
                 <div className=' w-full flex justify-center align-middle'>
                 <img src={Logo} className=' w-32'/>
                 <h1 className=' my-auto text-3xl font-semibold italic'>PMS</h1>

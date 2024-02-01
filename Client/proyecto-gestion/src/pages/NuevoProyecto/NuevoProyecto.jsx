@@ -1,13 +1,13 @@
-import React from 'react'
+
 import Header from '../../components/header'
-import SiderbarProfile from '../../components/SidebarProfile'
+import SidebarAdmin from '../../components/SidebarAdmin'
 
 function NuevoProyecto() {
     return (
         <div className='bg-slate-50'>
             <Header />
             <div className='flex'>
-                <SiderbarProfile />
+                <SidebarAdmin/>
                 <div className='w-full h-full'>
                     <div className='w-full h-full'>
                         <div className='bg-white my-3 w-full h-20 flex justify-between shadow'>

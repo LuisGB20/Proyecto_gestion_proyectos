@@ -1,6 +1,5 @@
-import React from 'react'
+import SidebarAdmin from '../../components/SidebarAdmin'
 import Header from '../../components/header'
-import SiderbarProfile from '../../components/SidebarProfile'
 import Whatsapp from '../../Img/whatsapp.png'
 import Telegram from '../../Img/telegram.png'
 import Netflix from '../../Img/netflix.png'
@@ -10,42 +9,38 @@ function Profile() {
     <div className='bg-slate-50'>
       <Header />
       <div className='flex'>
-        <SiderbarProfile />
+        <SidebarAdmin/>
         <div className='w-full h-full'>
           <div className='w-full h-full '>
             <div className='bg-white my-3 w-full h-20 flex justify-between shadow'>
               <h1 className='text-2xl font-semibold  p-5'>MI PERFIL</h1>
             </div>
-
-
-
-            <div className='flex mt-6 '>
-
+            <div className='flex mt-6'>
               <div className="w-full max-w-xs mr-10 ml-6  ">
                 <form className="bg-white shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] rounded px-10 pt-8 pb-12 mb-8 ">
-                  <div className="mb-4 ">
-                    <label className="block text-gray-500 text-sm font-bold mb-2" for="username">
+                  <div className="mb-4">
+                    <label className="block text-gray-500 text-sm font-bold mb-2" htmlFor="username">
                       Nombre
                     </label>
-                    <input readOnly className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Luis" />
+                    <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Luis" />
                   </div>
                   <div className="mb-4">
-                    <label className="block text-gray-500 text-sm font-bold mb-2" for="email">
+                    <label className="block text-gray-500 text-sm font-bold mb-2" htmlFor="email">
                       Correo
                     </label>
-                    <input readOnly className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Gomez@gmail.com" />
+                    <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Gomez@gmail.com" />
                   </div>
                   <div className="mb-4">
-                    <label className="block text-gray-500 text-sm font-bold mb-2" for="team">
+                    <label className="block text-gray-500 text-sm font-bold mb-2" htmlFor="team">
                       Equipo
                     </label>
-                    <input readOnly className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="team" type="text" placeholder="Spotify" />
+                    <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="team" type="text" placeholder="Spotify" />
                   </div>
                   <div className="mb-4">
-                    <label className="block text-gray-500 text-sm font-bold mb-2" for="team">
-                      Equipo
+                    <label className="block text-gray-500 text-sm font-bold mb-2" htmlFor="team2">
+                      Otro Equipo
                     </label>
-                    <input readOnly className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="team" type="text" placeholder="Spotify" />
+                    <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="team2" type="text" placeholder="Netflix" />
                   </div>
 
                 </form>
@@ -57,14 +52,14 @@ function Profile() {
 
               <div className="w-full mr-6">
                 <form className="bg-white shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] rounded px-10 pt-8 pb-12 mb-4 ">
-                  <div className="mb-8 ">
-                    <label className="block text-gray-500 text-sm font-bold mb-2" for="username">
+                  <div className="mb-8">
+                    <label className="block text-gray-500 text-sm font-bold mb-2" htmlFor="username">
                       Proyectos Completados
                     </label>
                     {/* <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Luis"/> */}
                   </div>
-                  <div className=" flex mb-8 p-4 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]">
-                    <img src={Whatsapp} />
+                  <div className="flex mb-8 p-4 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]">
+                    <img src={Whatsapp} alt="Whatsapp" />
                     <div className='flex items-center ml-8 '>Image 03.Png</div>
                     <div className='flex'>
                       <div className='ml-80'>Completed
@@ -77,9 +72,9 @@ function Profile() {
                     </div>
 
                   </div>
-                  {/* //Telegram */}
+                  {/* Telegram */}
                   <div className="flex mb-8 p-4 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]">
-                    <img src={Telegram} />
+                    <img src={Telegram} alt="Telegram" />
                     <div className='flex items-center ml-8'>Image 03.Png</div>
                     <div className='flex'>
                       <div className='ml-80 '>Completed
@@ -92,7 +87,7 @@ function Profile() {
 
                   </div>
                   <div className=" flex mb-14 p-4 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]">
-                    <img src={Netflix} />
+                    <img src={Netflix} alt="Netflix" />
                     <div className='flex items-center ml-8'>Image 03.Png</div>
                     <div className='flex'>
                       <div className='ml-80'>Completed
@@ -121,4 +116,4 @@ function Profile() {
   )
 }
 
-export default Profile
+export default Profile;
