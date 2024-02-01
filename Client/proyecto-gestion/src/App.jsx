@@ -27,6 +27,7 @@ import ProtectedRoutesJefe from "./Routes/ProtectedRoutesJefe.jsx";
 import { useState, useEffect } from "react";
 
 function App() {
+  {/* Misael*/ }
   const [isRoleValid, setRoleValid] = useState(false);
   const [isJefe, setIsJefe] = useState(false);
   const [rol, setRol] = useState('');
@@ -58,6 +59,7 @@ function App() {
   console.log("isRoleValid:", isRoleValid);
   console.log("isJefe:", isJefe);
   console.log("tokenDecoded:", tokenDecoded);
+
 
 
   return (
