@@ -170,7 +170,10 @@ function Login() {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
             },
-            body: JSON.stringify(usuario),
+            body: JSON.stringify({
+                email: usuario.email,
+                contrasena: usuario.contrasena,
+            }),
         })
             .then(response => response.json())
             .then(data => {
@@ -184,8 +187,17 @@ function Login() {
                     });
                     return;
                 }
-                sessionStorage.setItem('nombre', data.nombre)
-                sessionStorage.setItem('apellido', data.apellido)
+                sessionStorage.setItem('usuario', JSON.stringify({
+                    id: data.id,
+                    nombre: data.nombre,
+                    apellido: data.apellido,
+                    email: data.email,
+                    contrasena: data.contrasena,
+                    pregunta_seguridad: data.pregunta_seguridad,
+                    respuesta_seguridad: data.respuesta_seguridad,
+                    rol_id: data.rol_id
+                }));
+
                 setPregunta(data.pregunta_seguridad)
                 enviarCorreo();
             })

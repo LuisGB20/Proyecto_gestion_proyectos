@@ -22,43 +22,10 @@ import PerfilMiembro from "./pages/perfilMiembro/PerfilMiembro";
 import Dashboard from "./pages/Dash/Dashboard";
 import DashboardEquipos from "./pages/DashEquipos/DashboardEquipos";
 import Recuperar from './pages/RecuperarContraseña/Recuperar'
-import ProtectedRoutes from './Routes/ProtectedRoutes.jsx'
-import ProtectedRoutesJefe from "./Routes/ProtectedRoutesJefe.jsx";
-import { useState, useEffect } from "react";
+import MiembroRoute from './Routes/MiembroRoute.jsx'
+import JefeRoute from "./Routes/JefeRoute.jsx";
 
 function App() {
-  const [isRoleValid, setRoleValid] = useState(false);
-  const [isJefe, setIsJefe] = useState(false);
-  const [rol, setRol] = useState('');
-  const [tokenDecoded, setTokenDecoded] = useState(false);
-
-  useEffect(() => {
-    const token = sessionStorage.getItem('token');
-
-    if (token) {
-      const decodedToken = jwtDecode(token);
-      console.log(decodedToken);
-      console.log(decodedToken.roles);
-
-      if (decodedToken.roles === 'Programador' || decodedToken.roles === 'Analista' || decodedToken.roles === 'Diseñador') {
-        setRoleValid(true);
-        setRol(decodedToken.roles);
-      }
-      if (decodedToken.roles === 'Jefe') {
-        setIsJefe(true);
-        setRol(decodedToken.roles);
-      }
-
-      setTokenDecoded(true);
-    } else {
-      console.log("No hay token");
-    }
-  }, []);
-
-  console.log("isRoleValid:", isRoleValid);
-  console.log("isJefe:", isJefe);
-  console.log("tokenDecoded:", tokenDecoded);
-
 
   return (
     <>
@@ -74,21 +41,21 @@ function App() {
           <Route path='/Register' element={<Register />} /> {/* responsive  */}
 
           {/* Miembros */}
-          <Route element={<ProtectedRoutes canActivate={rol} redirectPath='/' />}>
-            <Route path='/ResourcesAndAssets' element={<ResourcesAndAssets />} /> {/* responsive */}
-            <Route path='/SolicitudActivos' element={<SolicitudActivos />} /> {/* responsive */}
-            <Route path='/SolicitudRecursos' element={<SolicitudRecursos />} /> {/* responsive */}
-            <Route path='/TableroMiembros' element={<TableroMiembros />} /> {/* responsive */}
-            <Route path='/Dashboard' element={<Dashboard />} />  {/* responsive */}  
-            <Route path='/DashboardEquipos' element={<DashboardEquipos />} /> {/* responsive */}  
+          <Route element={<MiembroRoute />}>
+            <Route path='/ResourcesAndAssets' component={<ResourcesAndAssets />} />
+            <Route path='/SolicitudActivos' component={<SolicitudActivos />} />
+            <Route path='/SolicitudRecursos' component={<SolicitudRecursos />} />
+            <Route path='/TableroMiembros' component={<TableroMiembros />} />
+            <Route path='/Dashboard' component={<Dashboard />} />
+            <Route path='/DashboardEquipos' component={<DashboardEquipos />} />
           </Route>
 
           {/* Jefe */}
-          <Route element={<ProtectedRoutesJefe canActivate={rol} redirectPath='/Login' />}>
-            <Route path='/TodosEquipos' element={<TodosEquipos />} /> {/* responsive */} 
-            <Route path='/NuevoProyecto' element={<NuevoProyecto />} /> {/* responsive */} 
-            <Route path='/NuevoEquipo' element={<NuevoEquipo />} /> {/* responsive */} 
-            <Route path='/PerfilMiembro' element={<PerfilMiembro />} /> {/* responsive */} 
+          <Route element={<JefeRoute />}>
+            <Route path='/TodosEquipos' component={<TodosEquipos />} is />
+            <Route path='/NuevoProyecto' element={<NuevoProyecto />} />
+            <Route path='/NuevoEquipo' element={<NuevoEquipo />} />
+            <Route path='/PerfilMiembro' element={<PerfilMiembro />} />
             <Route path='/Proyecto' element={<Proyecto />} />
             <Route path='/Equipo' element={<Equipo />} />
             <Route path='/Miembro' element={<Miembro />} />
