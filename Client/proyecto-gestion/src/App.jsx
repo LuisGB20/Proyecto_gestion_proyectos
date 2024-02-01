@@ -94,6 +94,7 @@ function App() {
             <Route path='/Miembro' element={<Miembro />} />
             <Route path='/TodosProyectos' element={<TodosProyectos />} /> {/* responsive */} 
             <Route path='/UsuarioMiembro' element={<UsuarioMiembro />} />
+            <Route path='/UsuarioMiembro' element={<UsuarioMiembro />} />
           </Route>
         </Routes>
       </BrowserRouter>
